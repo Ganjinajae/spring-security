@@ -21,9 +21,8 @@ public class SecurityConfig {
         .rememberMe();
     http
         .sessionManagement()
-        .maximumSessions(1)
-        .maxSessionsPreventsLogin(false)
-        ;
+        .sessionFixation().changeSessionId() ;
+
     return http.build();
   }
 }
